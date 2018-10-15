@@ -1,0 +1,40 @@
+{
+  "name": "quiz-1",
+  "version": "1.0.0",
+  "description": "Cluckr post creater and viewer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosadiaz/quiz-1.git"
+  },
+  "keywords": [
+    "twitter"
+  ],
+  "author": "Rosa Diaz Jara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosadiaz/quiz-1/issues"
+  },
+  "homepage": "https://github.com/rosadiaz/quiz-1#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "knex": "^0.15.2",
+    "morgan": "^1.9.1",
+    "pg": "^7.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "db:create": "createdb -e users",
+      "db:drop": "dropdb -e users",
+    "db:migrate": "knex migrate:latest",
+    "db:reset": "npm run db:drop && npm run db:create && npm run"
+  }
+}
