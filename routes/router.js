@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../db/client');
+const moment = require('moment')
 
 router.get('/new_cluck', (req, res) => {
   res.render('new_cluck');
@@ -16,10 +17,20 @@ router.post('/new_cluck', (req, res) => {
       imageUrl: req.body.imageUrl
     })
     .returning('*')
+    .orderBy('createdAt', 'desc')
     .then(clucks => {
-      console.log(`💭 New Cluck: ${clucks}`)
-      res.render('cluck', { cluck: clucks[0], username});
+      res.render('index', { clucks, username, moment});
     });
+});
+
+// List all cucks in an index from newest to oldest
+router.get(['/clucks', '/'], (req, res) => {
+  username = req.cookies.username
+  knex('clucks')
+    .orderBy('createdAt', 'desc')
+    .then(clucks => {
+      res.render('index', { clucks , username, moment});
+    });;
 });
 
 

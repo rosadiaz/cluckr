@@ -14,17 +14,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-  username = req.cookies.username;
-	res.render('index', {username});
-});
+const clucksRouter = require("./routes/router");
+app.use("/", clucksRouter);
 
 app.get('/sign_in', (req, res) => {
 	res.render('sign_in');
 });
-
-const clucksRouter = require("./routes/router");
-app.use("/", clucksRouter);
 
 app.post('/sign_out', (req, res) => {
   console.log('post from sign out')
@@ -32,7 +27,7 @@ app.post('/sign_out', (req, res) => {
   res.redirect('/');
 });
 
-const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24; // keep for one day
+const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24; // keep cookie for one day
 app.post('/sign_in', (req, res) => {
   const username = req.body.username;
   console.log(`🍪 username in cookie: ${username}`)
