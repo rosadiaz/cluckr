@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="row align-items-center">
+    <p><%= cluck.content %></p>
+    <img class="card-img-top logo ml-auto mr-auto img-thumbnail rounded mx-auto d-block w-50" src="<%=cluck.imageUrl%>" alt="Card image cap">
+  </div>
+  <p class="font-italic text-center">- Post by <%= cluck.username %></p>
+</div>
+
+<%- include('partials/footer') %>

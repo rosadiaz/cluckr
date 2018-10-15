@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
 app.get('/sign_in', (req, res) => {
 	res.render('sign_in');
 });
+
+const clucksRouter = require("./routes/router");
+app.use("/", clucksRouter);
+
 app.post('/sign_out', (req, res) => {
   console.log('post from sign out')
 	res.clearCookie('username');

@@ -15,9 +15,9 @@
     <div class="form-inline ml-auto"> 
       <% if (username) { %>
         <span>Start cluckin <b><%=username%></b>! </span>
-        <div class="mx-1">
+        <a href="/new_cluck" class="mx-1">
           <button class="btn btn-secondary" type="button">Cluck!</button>
-        </div>
+        </a>
         <form action="/sign_out" method="POST">
           <button class="btn btn-outline-secondary" type="submit">Sign Out</button>
         </form>
@@ -29,5 +29,7 @@
     </div>
   </nav>
 <body>
+<div class="m-4">
+
 
   
