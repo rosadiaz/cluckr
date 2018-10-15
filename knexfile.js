@@ -5,12 +5,12 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'users'
-    }
-  },
-  migrations: {
+      database: 'cluckr'
+    },
+    migrations: {
     tableName: "migrations",
-    directory: "./db/migrations"
-  },
-
+    directory: "db/migrations"
+    }
+  }
+  
 };

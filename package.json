@@ -33,7 +33,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "db:create": "createdb -e users",
-      "db:drop": "dropdb -e users",
+    "db:drop": "dropdb -e users",
     "db:migrate": "knex migrate:latest",
     "db:reset": "npm run db:drop && npm run db:create && npm run"
   }
