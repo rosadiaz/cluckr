@@ -14,7 +14,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
-app.get('/index', (request, response) => {
+app.get('/', (request, response) => {
 	response.render('index');
-  response.send(`<h1>This is Rosa's firs quiz</h1>`);
+});
+
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`)
 });
