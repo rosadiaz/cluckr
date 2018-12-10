@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cluckr Quiz</title>
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <script src="/scripts/bootstrap.min.js"></script>
+  <script src="/scripts/jquery-3.3.1.slim.min.js"></script>
+  <script src="/scripts/popper.min.js"></script>
+</head>
+  <nav class="navbar navbar-light bg-info">
+    <a class="navbar-brand" href="/">
+      <img src="/chick.png" alt="" height="30px">
+    </a>
+    <div class="form-inline ml-auto"> 
+      <% if (username) { %>
+        <span>Start cluckin <b><%=username%></b>! </span>
+        <a href="/new_cluck" class="mx-1">
+          <button class="btn btn-secondary" type="button">Cluck!</button>
+        </a>
+        <form action="/sign_out" method="POST">
+          <button class="btn btn-outline-secondary" type="submit">Sign Out</button>
+        </form>
+      <% } else { %>
+        <a class="mx-1" href="/sign_in">
+          <button class="btn btn-secondary" type="button">Sign In</button>
+        </a>
+      <% } %>
+    </div>
+  </nav>
+<body>
+<div class="m-4">
+
+
+  
